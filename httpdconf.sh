@@ -20,12 +20,12 @@ DocumentRoot @DOCROOT@
 
 <Directory @DOCROOT@/install/sbin>
 	AllowOverride None
-	SSLRequireSSL
-	SSLVerifyClient None
 	Allow from all
 </Directory>
 # allow all access to the rolls RPMS
 <Directory @DOCROOT@/install/rolls>
+        AddHandler cgi-script .cgi
+        Options FollowSymLinks Indexes ExecCGI
         DirectoryIndex /install/rolls/index.cgi
         Allow from all
 </Directory>
